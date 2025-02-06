@@ -1,0 +1,15 @@
+/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/bin/Debug/net8.0/HabitTracker
+/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/bin/Debug/net8.0/HabitTracker.deps.json
+/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/bin/Debug/net8.0/HabitTracker.runtimeconfig.json
+/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/bin/Debug/net8.0/HabitTracker.dll
+/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/bin/Debug/net8.0/HabitTracker.pdb
+/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/obj/Debug/net8.0/HabitTracker.GeneratedMSBuildEditorConfig.editorconfig
+/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/obj/Debug/net8.0/HabitTracker.AssemblyInfoInputs.cache
+/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/obj/Debug/net8.0/HabitTracker.AssemblyInfo.cs
+/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/obj/Debug/net8.0/HabitTracker.csproj.CoreCompileInputs.cache
+/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/obj/Debug/net8.0/HabitTracker.sourcelink.json
+/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/obj/Debug/net8.0/HabitTracker.dll
+/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/obj/Debug/net8.0/refint/HabitTracker.dll
+/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/obj/Debug/net8.0/HabitTracker.pdb
+/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/obj/Debug/net8.0/HabitTracker.genruntimeconfig.cache
+/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/obj/Debug/net8.0/ref/HabitTracker.dll
