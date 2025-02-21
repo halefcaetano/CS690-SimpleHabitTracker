@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/HabitTracker.csproj": {}
+    "/workspaces/CS690-SimpleHabitTracker/HabitTracker.csproj": {}
   },
   "projects": {
-    "/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/HabitTracker.csproj": {
+    "/workspaces/CS690-SimpleHabitTracker/HabitTracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/HabitTracker.csproj",
+        "projectUniqueName": "/workspaces/CS690-SimpleHabitTracker/HabitTracker.csproj",
         "projectName": "HabitTracker",
-        "projectPath": "/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/HabitTracker.csproj",
-        "packagesPath": "/Users/halefcaetano/.nuget/packages/",
-        "outputPath": "/Users/halefcaetano/Desktop/CS690-SimpleHabitTracker/obj/",
+        "projectPath": "/workspaces/CS690-SimpleHabitTracker/HabitTracker.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/CS690-SimpleHabitTracker/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/halefcaetano/.nuget/NuGet/NuGet.Config"
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.405/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
