@@ -17,7 +17,7 @@ class Program
             Console.WriteLine("5. Delete Habit");
             Console.WriteLine("6. Exit");
             Console.Write("Choose an option: ");
-            string choice = Console.ReadLine();
+            string? choice = Console.ReadLine();
 
             switch (choice)
             {
@@ -49,7 +49,13 @@ class Program
     static void AddHabit()
     {
         Console.Write("Enter the name of the habit: ");
-        string habit = Console.ReadLine();
+        string? habit = Console.ReadLine()?.Trim();
+        if (string.IsNullOrEmpty(habit))
+        {
+            Console.WriteLine("⚠️ Habit name cannot be empty.");
+            return;
+        }
+
         if (!habitTracker.ContainsKey(habit))
         {
             habitTracker[habit] = 0;
@@ -64,23 +70,22 @@ class Program
     static void LogProgress()
     {
         Console.Write("Enter the habit name: ");
-        string habit = Console.ReadLine();
-        if (habitTracker.ContainsKey(habit))
+        string? habit = Console.ReadLine()?.Trim();
+        if (string.IsNullOrEmpty(habit) || !habitTracker.ContainsKey(habit))
         {
-            Console.Write("Enter the number of days to log: ");
-            if (int.TryParse(Console.ReadLine(), out int daysToLog) && daysToLog > 0)
-            {
-                habitTracker[habit] += daysToLog;
-                Console.WriteLine($"✅ Logged {daysToLog} day(s) for '{habit}'. Total: {habitTracker[habit]} times.");
-            }
-            else
-            {
-                Console.WriteLine("⚠️ Invalid input. Please enter a positive number.");
-            }
+            Console.WriteLine("⚠️ Habit not found. Add it first.");
+            return;
+        }
+
+        Console.Write("Enter the number of days to log: ");
+        if (int.TryParse(Console.ReadLine(), out int daysToLog) && daysToLog > 0)
+        {
+            habitTracker[habit] += daysToLog;
+            Console.WriteLine($"✅ Logged {daysToLog} day(s) for '{habit}'. Total: {habitTracker[habit]} times.");
         }
         else
         {
-            Console.WriteLine("⚠️ Habit not found. Add it first.");
+            Console.WriteLine("⚠️ Invalid input. Please enter a positive number.");
         }
     }
 
@@ -94,7 +99,7 @@ class Program
         }
 
         Console.Write("View all habits (A) or a specific habit (S)? ");
-        string choice = Console.ReadLine().Trim().ToUpper();
+        string? choice = Console.ReadLine()?.Trim().ToUpper();
 
         if (choice == "A")
         {
@@ -106,15 +111,13 @@ class Program
         else if (choice == "S")
         {
             Console.Write("Enter the habit name: ");
-            string habitName = Console.ReadLine();
-            if (habitTracker.ContainsKey(habitName))
-            {
-                Console.WriteLine($"📌 {habitName}: {habitTracker[habitName]} times");
-            }
-            else
+            string? habitName = Console.ReadLine()?.Trim();
+            if (string.IsNullOrEmpty(habitName) || !habitTracker.ContainsKey(habitName))
             {
                 Console.WriteLine("⚠️ Habit not found.");
+                return;
             }
+            Console.WriteLine($"📌 {habitName}: {habitTracker[habitName]} times");
         }
         else
         {
@@ -125,40 +128,44 @@ class Program
     static void EditHabit()
     {
         Console.Write("Enter the habit name to edit: ");
-        string oldHabit = Console.ReadLine();
-        if (habitTracker.ContainsKey(oldHabit))
+        string? oldHabit = Console.ReadLine()?.Trim();
+        if (string.IsNullOrEmpty(oldHabit) || !habitTracker.ContainsKey(oldHabit))
         {
-            Console.Write("Enter the new name for the habit: ");
-            string newHabit = Console.ReadLine();
-            if (!habitTracker.ContainsKey(newHabit))
-            {
-                habitTracker[newHabit] = habitTracker[oldHabit];
-                habitTracker.Remove(oldHabit);
-                Console.WriteLine($"✅ Habit renamed from '{oldHabit}' to '{newHabit}'.");
-            }
-            else
-            {
-                Console.WriteLine("⚠️ A habit with this name already exists.");
-            }
+            Console.WriteLine("⚠️ Habit not found.");
+            return;
+        }
+
+        Console.Write("Enter the new name for the habit: ");
+        string? newHabit = Console.ReadLine()?.Trim();
+        if (string.IsNullOrEmpty(newHabit))
+        {
+            Console.WriteLine("⚠️ New habit name cannot be empty.");
+            return;
+        }
+
+        if (!habitTracker.ContainsKey(newHabit))
+        {
+            habitTracker[newHabit] = habitTracker[oldHabit];
+            habitTracker.Remove(oldHabit);
+            Console.WriteLine($"✅ Habit renamed from '{oldHabit}' to '{newHabit}'.");
         }
         else
         {
-            Console.WriteLine("⚠️ Habit not found.");
+            Console.WriteLine("⚠️ A habit with this name already exists.");
         }
     }
 
     static void DeleteHabit()
     {
         Console.Write("Enter the habit name to delete: ");
-        string habit = Console.ReadLine();
-        if (habitTracker.ContainsKey(habit))
-        {
-            habitTracker.Remove(habit);
-            Console.WriteLine($"🗑️ Habit '{habit}' deleted successfully.");
-        }
-        else
+        string? habit = Console.ReadLine()?.Trim();
+        if (string.IsNullOrEmpty(habit) || !habitTracker.ContainsKey(habit))
         {
             Console.WriteLine("⚠️ Habit not found.");
+            return;
         }
+
+        habitTracker.Remove(habit);
+        Console.WriteLine($"🗑️ Habit '{habit}' deleted successfully.");
     }
 }
